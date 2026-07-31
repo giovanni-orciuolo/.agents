@@ -1,0 +1,34 @@
+# Defense in depth. None of these should ever be inside this repo — claude-config.py
+# copies an explicit allowlist and never globs — but the cost of a mistake here is a
+# published credential, so deny them by name as well.
+
+.credentials.json
+history.jsonl
+mcp-needs-auth-cache.json
+policy-limits.json
+remote-settings.json
+.last-cleanup
+
+projects/
+sessions/
+session-env/
+shell-snapshots/
+file-history/
+backups/
+cache/
+downloads/
+daemon/
+daemon.*
+jobs/
+ide/
+chrome/
+security/
+plugins/
+
+# settings.local.json is the machine-local override layer by design — deliberately not shared.
+settings.local.json
+
+# Backups written by `claude-config.py apply`
+*.bak-*
+
+__pycache__/
