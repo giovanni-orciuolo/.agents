@@ -1,4 +1,4 @@
-# Keep tracked config byte-exact across platforms. Git's EOL normalization would
-# otherwise rewrite CRLF/LF on checkout, making `claude-config.py check` report
-# spurious drift between the repo and ~/.claude.
+# Keep tracked files byte-exact across platforms. Git's EOL normalization would
+# otherwise rewrite LF to CRLF on checkout, breaking byte-exact comparison with
+# ~/AGENTS.md and ~/.claude/CLAUDE.md.
 * -text
